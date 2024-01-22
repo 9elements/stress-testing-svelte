@@ -28,9 +28,3 @@
 		{/each}
 	</div>
 </div>
-
-<style>
-	.max-width {
-		max-width: 100%;
-	}
-</style>
