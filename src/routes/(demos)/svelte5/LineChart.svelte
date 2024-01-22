@@ -44,11 +44,7 @@
 	const d = $derived(lineGenerator(dataPoints));
 </script>
 
-<svg
-	width={mainChartWidth}
-	height={mainChartHeight}
-	viewBox="0 0 {mainChartWidth} {mainChartHeight}"
->
+<svg viewBox="0 0 {mainChartWidth} {mainChartHeight}">
 	<path {d} />
 </svg>
 

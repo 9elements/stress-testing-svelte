@@ -1,0 +1,18 @@
+button,
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.2em;
+	width: fit-content;
+	border: none;
+	border-radius: 0.5em;
+	background: var(--foreground);
+	color: var(--background);
+	--inline-padding: 1.6em;
+	padding-inline: var(--inline-padding);
+	padding-block: calc(var(--inline-padding) * 0.6);
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: 700;
+}

@@ -21,12 +21,12 @@
 		return dataPoints;
 	};
 
-	let numCharts = 10;
+	let numCharts = $state(10);
 
 	/**
 	 * @type {DataPoint[][]}
 	 */
-	$: charts = times(numCharts).map(() => generateDataPoints(1000));
+	const charts = $derived(times(numCharts).map(() => generateDataPoints(1000)));
 
 	const regenerate = () => {
 		charts.forEach((chartPoints) => {
@@ -36,36 +36,55 @@
 		});
 	};
 
-	let running = false;
+	let running = $state(false);
 	const frame = () => {
-		running = true;
 		regenerate();
-		requestAnimationFrame(() => {
+
+		if (running) {
+			requestAnimationFrame(() => {
+				frame();
+			});
+		}
+	};
+
+	const toggle = () => {
+		running = !running;
+
+		if (running) {
 			frame();
-		});
+		}
 	};
 </script>
 
-<p>
-	{#if !running}
-		<button on:click={frame}>Regenerate!</button>
-	{/if}
+<div class="hstack gap-1 controls">
+	<button on:click={toggle}>
+		{#if running}
+			Stop!
+		{:else}
+			Start!
+		{/if}
+	</button>
 
-	<label>
+	<label for="num-charts-control">
 		Number of charts ({numCharts}):
-		<input type="range" min="10" max="100" step="10" bind:value={numCharts} />
 	</label>
-</p>
+	<input type="range" id="num-charts-control" min="10" max="100" step="10" bind:value={numCharts} />
+</div>
 
-<div class="stack">
+<div class="vstack">
 	{#each charts as chartDataPoints}
 		<LineChart dataPoints={chartDataPoints} />
 	{/each}
 </div>
 
 <style>
-	.stack {
-		display: flex;
-		flex-direction: column;
+	.controls {
+		justify-content: center;
+		align-items: center;
+		margin-block-end: 1em;
+	}
+
+	.note {
+		margin-block-end: 1em;
 	}
 </style>
