@@ -75,7 +75,11 @@
 
 {#if numCharts > 89}
 	<p class="note">
-		<i>Oh, oh... any more charts and this will probably crash...</i>
+		<i>
+			Oh, oh... any more charts and this will probably crash... just reload the page when that
+			happens
+		</i>
+		😉
 	</p>
 {/if}
 
