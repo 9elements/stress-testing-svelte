@@ -19,7 +19,9 @@
 
 			<p>
 				This is a companion site for the article
-				<a href="https://9elements.com/blog">
+				<a
+					href="https://9elements.com/blog/stress-testing-svelte-until-your-browser-breaks-down-crying/"
+				>
 					<i>Stress testing Svelte until your browser breaks down crying</i>
 				</a>. It tries to show the perceivable performance improvements that are gained in Svelte 5.
 				This website is using the
