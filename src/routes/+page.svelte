@@ -14,7 +14,20 @@
 
 <div class="hstack gap-2">
 	<div class="vstack gap-2 flex-1">
-		<h1>Stress testing Svelte</h1>
+		<section>
+			<h1>Stress testing Svelte</h1>
+
+			<p>
+				This is a companion site for the article
+				<a href="https://9elements.com/blog">
+					<i>Stress testing Svelte until your browser breaks down crying</i>
+				</a>. It tries to show the perceivable performance improvements that are gained in Svelte 5.
+				This website is using the
+				<i>5.0.0-next.37</i>
+				version of Svelte but the Svelte 4 demo is still written in the "old"
+				<i>compile-time-reactivity</i> style.
+			</p>
+		</section>
 
 		<div class="vstack gap-1">
 			<a href="/svelte4" class="button">Svelte 4 Demo <Arrow /></a>
@@ -22,9 +35,15 @@
 		</div>
 	</div>
 
-	<div class="vstack flex-2 max-width">
+	<div class="vstack flex-1 randomness">
 		{#each randomCharts as chart}
 			<LineChart dataPoints={chart} />
 		{/each}
 	</div>
 </div>
+
+<style>
+	.randomness {
+		flex-basis: 20rem;
+	}
+</style>

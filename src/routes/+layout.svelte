@@ -19,10 +19,10 @@
 				<a href="/" class:active={isCurrent('/')}>Home</a>
 			</li>
 			<li>
-				<a href="/svelte4" class:active={isCurrent('/svelte4')}>Demo 4</a>
+				<a href="/svelte4" class:active={isCurrent('/svelte4')}>Svelte 4 demo</a>
 			</li>
 			<li>
-				<a href="/svelte5" class:active={isCurrent('/svelte5')}>Demo 5</a>
+				<a href="/svelte5" class:active={isCurrent('/svelte5')}>Svelte 5 demo</a>
 			</li>
 		</ul>
 	</nav>
